@@ -85,6 +85,11 @@ void removeNumberTest() {
 void binarySearchTest() {
 	//TODO test for understanding the standard method Arrays.binarySearch(int[] arraysSorted,
 	// int key)
+	int [] src = {2, 3, 4, 6, 7, 8, 9, 10};
+	int index = 2;
+	assertEquals(0, Arrays.binarySearch(src, index));
+	index = 1;
+	assertEquals(-1, Arrays.binarySearch(src, index));
 }
 @Test
 void insertSortedTest() {

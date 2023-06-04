@@ -106,5 +106,67 @@ void insertSortedTest() {
 	int [] expected4 = {2, 3, 4, 6, 6, 7, 8, 9, 10};
 	assertArrayEquals(expected4, ArraysInt.insertNumberSorted(src, number));
 }
+@Test
+void maxLongTest() {
+	assertEquals(Long.MAX_VALUE, getLongMax());
+}
+private Long getLongMax() {
+	long res = 1;
+	while(res > 0) {
+		res *= 2;
+	}
+	return res - 1;
+}
+@Test
+void maxIntegerTest() {
+	assertEquals(Integer.MAX_VALUE, getIntegerMax());
+}
+private int getIntegerMax() {
+	int res = 1;
+	while(res > 0) {
+		res++;
+	}
+	return res - 1;
+}
+@Test
+void binarySearchNumberTest() {
+	int []array = {1, 2, 4, 5};
+	int []array1 = {1, 2, 2, 2, 3, 3, 3, 6};
+	int []array2 = {2, 2, 2, 3, 3, 3};
+	int number = 0;
+//	assertEquals(-1, ArraysInt.binarySearchNumber(array, number));
+	number = 3;
+	assertEquals(-3, ArraysInt.binarySearchNumber(array, number));
+	number = 6;
+	assertEquals(-5, ArraysInt.binarySearchNumber(array, number));
+	number =2;
+	assertEquals(1, ArraysInt.binarySearchNumber(array1, number));
+	number =6;
+	assertEquals(7, ArraysInt.binarySearchNumber(array1, number));
+	number =2;
+	assertEquals(0, ArraysInt.binarySearchNumber(array2, number));
+	number =3;
+	assertEquals(3, ArraysInt.binarySearchNumber(array2, number));
+}
+//################  Additional Task Test 01 ###################### 
+@Test
+void maxSubsequenceLengthTest() {
+	int [] array = {1,3,3,2,8,8,8,5,6,6};
+	int [] array1 = {3,3,3,3,8,8,8,5,6,6};
+	int [] array2 = {1,3,3,2,8,8,6,6,6,6};
+	int [] array3 = {1,1,1,1,1,8,8,8,8,8};
+	assertEquals(3, ArraysInt.maxSubsequenceLength(array));
+	assertEquals(4, ArraysInt.maxSubsequenceLength(array1));
+	assertEquals(4, ArraysInt.maxSubsequenceLength(array2));
+	assertEquals(5, ArraysInt.maxSubsequenceLength(array3));
+}
 
+//################  Additional Task 02 ###################### 
+@Test
+void toBinaryStrTest() {
+	int number = 2;
+	assertEquals("10", ArraysInt.toBinaryStr(number));
+	number = 123;
+	assertEquals("1111011", ArraysInt.toBinaryStr(number));
+}
 }

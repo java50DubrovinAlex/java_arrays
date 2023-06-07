@@ -134,7 +134,7 @@ void binarySearchNumberTest() {
 	int []array1 = {1, 2, 2, 2, 3, 3, 3, 6};
 	int []array2 = {2, 2, 2, 3, 3, 3};
 	int number = 0;
-//	assertEquals(-1, ArraysInt.binarySearchNumber(array, number));
+	assertEquals(-1, ArraysInt.binarySearchNumber(array, number));
 	number = 3;
 	assertEquals(-3, ArraysInt.binarySearchNumber(array, number));
 	number = 6;
@@ -148,6 +148,8 @@ void binarySearchNumberTest() {
 	number =3;
 	assertEquals(3, ArraysInt.binarySearchNumber(array2, number));
 }
+
+
 //################  Additional Task Test 01 ###################### 
 @Test
 void maxSubsequenceLengthTest() {
@@ -168,5 +170,36 @@ void toBinaryStrTest() {
 	assertEquals("10", ArraysInt.toBinaryStr(number));
 	number = 123;
 	assertEquals("1111011", ArraysInt.toBinaryStr(number));
+}
+
+@Test
+void muchRepeatedTestBubble () 
+{
+	int N_ELEMENTS = 100000;
+	int array [] = new int[N_ELEMENTS];
+	for (int i = 0; i < array.length; i++)
+	{
+	    array[i] = ArraysInt.getRandomInt(0,100);
+	}
+	int index = ArraysInt.getRandomInt(0,99999);
+	ArraysInt.bubbleSort(array);
+	assertTrue(array[index] <= array[index+1]);
+	index = ArraysInt.getRandomInt(0,99999);
+	assertTrue(array[index+1] >= array[index]);
+}
+@Test
+void muchRepeatedTestQuickSort () 
+{
+int N_ELEMENTS = 100000;
+int array [] = new int[N_ELEMENTS];
+for (int i = 0; i < array.length; i++) 
+{
+array[i] = ArraysInt.getRandomInt(0,100);
+}
+int index = ArraysInt.getRandomInt(0,99999);
+ArraysInt.quickSort(array);
+assertTrue(array[index] <= array[index+1]);
+index = ArraysInt.getRandomInt(0,99999);
+assertTrue(array[index+1] >= array[index]);
 }
 }

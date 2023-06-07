@@ -75,7 +75,7 @@ public class ArraysInt {
 	public static void quickSort(int [] array) {
 		Arrays.sort(array); // O[N logN]
 	}
-	public static void bubleSort(int [] array) {
+	public static void bubbleSort(int [] array) {
 		int length = array.length;
 		boolean flSorted = false;
 		do {
